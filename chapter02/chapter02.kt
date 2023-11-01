@@ -1,4 +1,4 @@
-fun basicGrammer() {
+fun basicGrammar() {
     val a = readLine()!!.toInt()
     val b = readLine()!!.toInt()
     println(a + b)
@@ -16,3 +16,28 @@ fun basicGrammer() {
        이 경우 변수 타입을 명시해야 한다.
        변수를 사용하기 전에 변수를 초기화했는지 컴파일러가 확실히 알 수 없는 경우 컴파일 오류가 발생한다. */
 }
+
+fun basicType() {
+    val f = 12_345_678
+    val g: Byte = 1
+
+    val h = 1_000_000 // 리터럴에 `_` 를 넣어서 가독성을 높일 수 있다.
+
+    val i = 100L // 리터럴에 L 이나 l 을 붙이면 Long 타입이 된다.
+    // val j: Int = 100L  // Error : assigning Long to Int
+    val k = Short.MIN_VALUE
+    println(k) // -32768
+    val l = Int.MAX_VALUE
+    println(l) // 2147483647
+    val m = 1.0 / Double.NEGATIVE_INFINITY
+    println(m) // -0.0
+    val n = 2 - Double.POSITIVE_INFINITY
+    println(n) // -Infinity
+    val o = 3 * Float.NaN
+    println(o) // NaN
+
+    // 2.2.6 수변환
+    val p = 100 // Int
+    val q: Long = p // Error : can't assign Int to Long
+}
+
