@@ -8,7 +8,7 @@ fun basicGrammar() {
     val c: Int = 100
     val d: String = "Hello!"
     // 변수 이름 뒤에 콜론을 표시하고 그 뒤에 타입을 적어서 타입을 명시할 수 있다.
-    // val e: Int = "Hi!" 와 같이 초긱값이 지정한 타입에 속하지 않을 경우 컴파일 오류를 일으킨다.
+    // val e: Int = "Hi!" 와 같이 초기값이 지정한 타입에 속하지 않을 경우 컴파일 오류를 일으킨다.
 
     val e: String
     e = "Hello!!!"
@@ -39,5 +39,17 @@ fun basicType() {
     // 2.2.6 수변환
     val p = 100 // Int
     val q: Long = p // Error : can't assign Int to Long
+
+    // 2.2.8 비교와 동등성
+    val r = 1
+    val x = 2L
+    println(r == x) // Error : comparing Int and Long
+    println(r.toLong() == x) // 두 타입이 같으므로 동등성 연산 가능
+
+    println(Double.NaN == Double.NaN) // false
+    println(Double.NaN != Double.NaN) // true
+    println(Double.NaN <= Double.NaN) // false
+    println(Double.NaN < Double.POSITIVE_INFINITY) // false
+    println(Double.NaN > Double.NEGATIVE_INFINITY) // false
 }
 
